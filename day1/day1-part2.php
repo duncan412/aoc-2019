@@ -3,8 +3,10 @@
 $handle = fopen('day1.txt', 'r');
 $total = 0;
 while (($mass = fgets($handle)) !== false) {
-    $fuel = floor($mass / 3);
-    $total += ($fuel - 2);
+    while ((($mass / 3) - 2) > 0) {
+        $mass = floor(($mass / 3) - 2);
+        $total += $mass;
+    }
 }
 
 echo $total;
